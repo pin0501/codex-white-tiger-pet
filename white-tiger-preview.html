@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>白虎 · Codex 寵物</title>
+  <style>
+    :root{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Microsoft JhengHei",sans-serif;color:#363c37;background:#f3f0e9;font-synthesis:none;--card:#fcfaf6;--ink:#363c37;--muted:#7b8075;--line:#dedfd4;--accent:#566a50;--soft:#e9ede0;--stage:#eeeee6;--dot:#d5d9cc;--shadow:0 18px 70px #4b503c0a}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:48px 24px}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible,a:focus-visible{outline:3px solid #a7966c;outline-offset:4px}.shell{width:min(100%,1056px)}header{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:28px}.eyebrow{color:var(--muted);font-size:11px;letter-spacing:.19em;margin:0 0 11px}h1{margin:0;font-size:34px;letter-spacing:.07em;font-weight:600}h1 span{font-size:14px;color:var(--muted);font-weight:400;margin-left:14px;letter-spacing:.04em}.intro{color:var(--muted);font-size:14px;line-height:1.8;margin:14px 0 0}.theme-switch{display:flex;gap:3px;padding:4px;border:1px solid var(--line);border-radius:30px;flex:none}.theme-switch button{background:transparent;border:0;color:var(--muted);padding:8px 15px;border-radius:24px;font-size:12px}.theme-switch button[aria-pressed="true"]{background:var(--ink);color:var(--card)}main{display:grid;grid-template-columns:1.13fr 1fr;overflow:hidden;border:1px solid var(--line);background:var(--card);border-radius:25px;box-shadow:var(--shadow)}.stage-wrap{padding:24px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:16px}.stage{min-height:382px;position:relative;border-radius:15px;background-color:var(--stage);background-image:radial-gradient(var(--dot) .8px,transparent .8px);background-size:17px 17px;display:grid;place-items:center;overflow:hidden}.stage::after{content:"";position:absolute;width:180px;height:18px;bottom:49px;background:#4649380b;filter:blur(12px);border-radius:50%;pointer-events:none}canvas{display:block;width:264px;height:286px;position:relative;z-index:1;max-width:100%;object-fit:contain}.stage-label{position:absolute;left:17px;top:16px;display:flex;gap:7px;align-items:center;font-size:11px;color:var(--muted);letter-spacing:.06em}.status-dot{width:5px;height:5px;background:#849879;border-radius:50%}.frame-count{position:absolute;right:17px;bottom:16px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;letter-spacing:.09em}.error{position:absolute;inset:60px 24px;display:grid;place-items:center;text-align:center;font-size:13px;line-height:1.8;color:var(--muted);z-index:2}.error[hidden]{display:none}.stage-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}.pet-name{display:flex;align-items:center;gap:10px;font-size:14px}.tag{font-size:10px;color:var(--muted);letter-spacing:.04em;border:1px solid var(--line);border-radius:20px;padding:4px 8px}.pause{background:transparent;border:1px solid var(--line);border-radius:24px;padding:8px 14px;color:var(--ink);font-size:12px;display:flex;gap:7px;align-items:center}.pause:disabled{opacity:.45;cursor:default}.controls{padding:35px 31px 30px;display:flex;flex-direction:column}h2{font-size:17px;letter-spacing:.025em;font-weight:600;margin:0 0 7px}.hint{color:var(--muted);font-size:12px;margin:0 0 23px;line-height:1.7}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.action{min-height:68px;padding:12px 5px;border:1px solid var(--line);color:var(--ink);background:transparent;border-radius:11px;display:flex;flex-direction:column;align-items:center;gap:7px;transition:background .14s,border-color .14s}.action:hover{background:var(--soft)}.action[aria-pressed="true"]{background:var(--soft);border-color:var(--accent);color:var(--accent)}.action-symbol{font-size:15px;line-height:1;font-weight:400}.action-name{font-size:12px;letter-spacing:.025em}.tracking{margin-top:20px;padding:17px 0 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:center}.tracking-title{font-size:13px;margin:0 0 5px}.tracking-hint{color:var(--muted);font-size:11px;line-height:1.7;margin:0}.toggle{background:var(--line);border:0;width:39px;height:23px;flex:none;border-radius:30px;padding:3px;transition:background .15s}.toggle::after{content:"";display:block;background:var(--card);width:17px;height:17px;border-radius:50%;box-shadow:0 1px 3px #0002;transition:transform .15s}.toggle[aria-checked="true"]{background:var(--accent)}.toggle[aria-checked="true"]::after{transform:translateX(16px)}.note{font-size:11px;line-height:1.8;color:var(--muted);margin:22px 0 0}.footer{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted);line-height:1.8;margin-top:22px;padding:0 3px}.footer a{color:var(--accent);text-underline-offset:4px;text-decoration-thickness:1px}.heart{color:#ac987a}.shell[data-theme="dark"]{--card:#242b29;--ink:#e4e8df;--muted:#9ca79a;--line:#414b43;--accent:#b6c8a4;--soft:#354237;--stage:#1c2421;--dot:#364039;--shadow:0 18px 70px #0002}.shell[data-theme="dark"] .stage::after{background:#0003}.shell[data-theme="dark"] .toggle[aria-checked="true"]::after{background:#2b392b}body:has(.shell[data-theme="dark"]){background:#19211e;color:#e4e8df}@media(max-width:760px){body{padding:28px 16px}header{align-items:start;gap:12px;flex-wrap:wrap}h1{font-size:28px}h1 span{display:block;margin:9px 0 0;font-size:12px}.intro{font-size:12px;max-width:290px}.theme-switch{margin-left:auto}main{grid-template-columns:1fr}.stage-wrap{border-right:0;border-bottom:1px solid var(--line);padding:18px}.stage{min-height:330px}.stage::after{bottom:31px}.controls{padding:26px 23px}.hint{margin-bottom:18px}.action{min-height:63px}.footer{flex-direction:column;gap:7px}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+<div class="shell" id="shell" data-theme="light">
+  <header>
+    <div>
+      <p class="eyebrow">A LITTLE COMPANION</p>
+      <h1>白虎<span>你的 Codex 小夥伴</span></h1>
+      <p class="intro">圓圓的前掌、溫柔的眼神，<br>還有一點點毛茸茸。</p>
+    </div>
+    <div class="theme-switch" aria-label="預覽背景">
+      <button type="button" data-theme="light" aria-pressed="true">淺色</button>
+      <button type="button" data-theme="dark" aria-pressed="false">深色</button>
+    </div>
+  </header>
+  <main>
+    <section class="stage-wrap" aria-label="白虎動畫預覽">
+      <div class="stage" id="stage">
+        <div class="stage-label"><span class="status-dot"></span><span id="status">輕輕發呆</span></div>
+        <canvas id="pet" width="528" height="572" role="img" aria-label="白虎寵物，正在待機"></canvas>
+        <div id="load-error" class="error" hidden>還沒找到白虎的圖片。<br>請將預覽頁與 white-tiger-illustrated<br>資料夾保存在一起，再重新開啟。</div>
+        <span class="frame-count" id="frame-count" aria-hidden="true">01 / 06</span>
+      </div>
+      <div class="stage-bottom">
+        <div class="pet-name">白虎<span class="tag">插畫 × 毛絨</span></div>
+        <button type="button" class="pause" id="pause" aria-label="暫停動畫"><span id="pause-symbol" aria-hidden="true">Ⅱ</span><span id="pause-text">暫停</span></button>
+      </div>
+    </section>
+    <section class="controls" aria-labelledby="actions-title">
+      <h2 id="actions-title">今天，想做什麼？</h2>
+      <p class="hint">點選動作，看看白虎的小表情。</p>
+      <div class="actions" id="actions" aria-label="選擇動作"></div>
+      <div class="tracking">
+        <div><p class="tracking-title">跟著滑鼠看看</p><p class="tracking-hint" id="tracking-hint">開啟後，在白虎身邊移動滑鼠。</p></div>
+        <button type="button" class="toggle" id="tracking" role="switch" aria-label="視線追蹤" aria-describedby="tracking-hint" aria-checked="false"></button>
+      </div>
+      <p class="note">小夥伴在 Codex 裡，會隨著工作狀態換上不同動作。<br>這裡可以慢慢看，找找你最喜歡的模樣。</p>
+    </section>
+  </main>
+  <div class="footer"><span>從白老虎玩偶出發，陪你一起完成每一件小事。<span class="heart"> ♡</span></span><a href="./README.md">安裝說明 ↗</a></div>
+</div>
+<script>
+(() => {
+  'use strict';
+  const states = [
+    {id:'idle',name:'發呆',symbol:'○',status:'輕輕發呆',row:0,count:6,durations:[1680,660,660,840,840,1920]},
+    {id:'running-right',name:'往右跑',symbol:'→',status:'往右跑跑',row:1,count:8,duration:120,last:220},
+    {id:'running-left',name:'往左跑',symbol:'←',status:'往左跑跑',row:2,count:8,duration:120,last:220},
+    {id:'waving',name:'揮揮手',symbol:'✧',status:'跟你打個招呼',row:3,count:4,duration:140,last:280},
+    {id:'jumping',name:'跳一下',symbol:'↑',status:'開心跳一下',row:4,count:5,duration:140,last:280},
+    {id:'failed',name:'有點失落',symbol:'⌁',status:'休息一下，再試一次',row:5,count:8,duration:140,last:240},
+    {id:'waiting',name:'等一下',symbol:'◷',status:'乖乖等你',row:6,count:6,duration:150,last:260},
+    {id:'running',name:'工作中',symbol:'⋆',status:'一起認真工作',row:7,count:6,duration:120,last:220},
+    {id:'review',name:'仔細看看',symbol:'⌕',status:'讓我仔細看看',row:8,count:6,duration:150,last:280}
+  ];
+  const canvas=document.getElementById('pet'), ctx=canvas.getContext('2d');
+  const status=document.getElementById('status'), counter=document.getElementById('frame-count');
+  const pause=document.getElementById('pause'), trackingButton=document.getElementById('tracking');
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let selected=states[0], frame=0, playing=!reducedMotion, tracking=false, timer=null, ready=false;
+  const sheet=new Image();
+  function stopTimer(){if(timer!==null){window.clearTimeout(timer);timer=null;}}
+  function draw(row,col,total,index){
+    if(!ready||!ctx)return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+    ctx.drawImage(sheet,col*192,row*208,192,208,0,0,canvas.width,canvas.height);
+    counter.textContent=String(index+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+  }
+  function render(){draw(selected.row,frame,selected.count,frame);}
+  function schedule(){
+    stopTimer();
+    if(!ready||!playing||tracking||document.hidden)return;
+    const ms=selected.durations?selected.durations[frame]:(frame===selected.count-1?selected.last:selected.duration);
+    timer=window.setTimeout(()=>{frame=(frame+1)%selected.count;render();schedule();},ms);
+  }
+  function updatePause(){
+    document.getElementById('pause-symbol').textContent=playing?'Ⅱ':'▷';
+    document.getElementById('pause-text').textContent=playing?'暫停':'播放';
+    pause.setAttribute('aria-label',playing?'暫停動畫':'播放動畫');
+    pause.disabled=tracking;
+  }
+  function setTracking(value){
+    tracking=value;trackingButton.setAttribute('aria-checked',String(value));
+    updatePause();stopTimer();
+    if(value){status.textContent='你在哪裡，我就看哪裡';canvas.setAttribute('aria-label','白虎寵物，視線跟隨滑鼠');draw(9,0,16,0);}
+    else{status.textContent=selected.status;canvas.setAttribute('aria-label','白虎寵物，'+selected.status);render();schedule();}
+  }
+  const actionButtons=states.map(state=>{
+    const button=document.createElement('button');button.type='button';button.className='action';
+    button.dataset.state=state.id;button.setAttribute('aria-pressed',String(state===selected));
+    const symbol=document.createElement('span');symbol.className='action-symbol';symbol.setAttribute('aria-hidden','true');symbol.textContent=state.symbol;
+    const label=document.createElement('span');label.className='action-name';label.textContent=state.name;
+    button.append(symbol,label);button.addEventListener('click',()=>{
+      stopTimer();selected=state;frame=0;playing=true;
+      actionButtons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+      setTracking(false);
+    });document.getElementById('actions').append(button);return button;
+  });
+  pause.addEventListener('click',()=>{playing=!playing;updatePause();schedule();});
+  trackingButton.addEventListener('click',()=>setTracking(!tracking));
+  document.getElementById('stage').addEventListener('pointermove',event=>{
+    if(!tracking||!ready)return;
+    const box=canvas.getBoundingClientRect(),x=event.clientX-(box.left+box.width/2),y=event.clientY-(box.top+box.height/2);
+    if(Math.hypot(x,y)<=1)return;
+    const angle=(Math.atan2(x,-y)*180/Math.PI+360)%360,index=Math.round(angle/22.5)%16;
+    draw(9+Math.floor(index/8),index%8,16,index);
+  });
+  document.querySelectorAll('.theme-switch button').forEach(button=>button.addEventListener('click',()=>{
+    document.getElementById('shell').dataset.theme=button.dataset.theme;
+    document.querySelectorAll('.theme-switch button').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+  }));
+  document.addEventListener('visibilitychange',()=>schedule());
+  sheet.addEventListener('load',()=>{
+    if(sheet.naturalWidth!==1536||sheet.naturalHeight!==2288){document.getElementById('load-error').textContent='圖片尺寸與寵物格式不符，請使用隨附的完整素材。';document.getElementById('load-error').hidden=false;return;}
+    ready=true;render();schedule();
+  });
+  sheet.addEventListener('error',()=>{document.getElementById('load-error').hidden=false;status.textContent='等待圖片載入';});
+  updatePause();sheet.src='./white-tiger-illustrated/spritesheet.png';
+})();
+</script>
+</body>
+</html>
